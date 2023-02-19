@@ -8,10 +8,10 @@ namespace Schedule.Data.Models
         public Guid Id { get; set; }
 
         [Required]
-        public string Name { get; set; }
+        public DateTime Date { get; set; }
 
         [Required]
-        public DateTime Date { get; set; }
+        public TimeSlot TimeSlot { get; set; }
 
         [Required]
         public Group Group { get; set; }
