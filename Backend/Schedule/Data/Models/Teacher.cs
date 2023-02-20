@@ -8,6 +8,7 @@ namespace Schedule.Data.Models
         public Guid Id { get; set; }
 
         [Required]
+        [RegularExpression(@"([A-Za-zА-Яа-я]+\s){1,2}[A-Za-zА-Яа-я]+")] // Формат: ФИ или ФИО
         public string FullName { get; set; }
     }
 }

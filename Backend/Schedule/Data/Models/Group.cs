@@ -8,6 +8,8 @@ namespace Schedule.Data.Models
         public Guid Id { get; set; }
 
         [Required]
+        [MaxLength(16)]
+        [MinLength(1)]
         public string Number { get; set; }
     }
 }
