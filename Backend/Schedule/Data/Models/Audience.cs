@@ -2,7 +2,7 @@
 
 namespace Schedule.Data.Models
 {
-    public class Group
+    public class Audience
     {
         [Required]
         public Guid Id { get; set; }

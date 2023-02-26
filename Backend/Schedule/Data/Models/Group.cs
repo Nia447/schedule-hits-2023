@@ -2,7 +2,7 @@
 
 namespace Schedule.Data.Models
 {
-    public class WeeklyScheduleDto
+    public class Group
     {
         [Required]
         public Guid Id { get; set; }

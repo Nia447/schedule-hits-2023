@@ -2,7 +2,7 @@
 
 namespace Schedule.Data.Models
 {
-    public enum TimeSlot
+    public enum NumberLesson
     {
         [Display(Name = "8:45-10:20")]
         FirstLesson,
@@ -19,13 +19,13 @@ namespace Schedule.Data.Models
         [Display(Name = "20:15-21:50")]
         SeventhLesson,
     }
-    public static class TimeSlotClass
+    public static class NumberLessonClass
     {
-        private static List<TimeSlot> array = new List<TimeSlot>() { TimeSlot.FirstLesson, TimeSlot.SecondLesson, TimeSlot.ThirdLesson, TimeSlot.FourthLesson, TimeSlot.FifthLesson, TimeSlot.SixthLesson, TimeSlot.SeventhLesson };
+        private static List<NumberLesson> array = new List<NumberLesson>() { NumberLesson.FirstLesson, NumberLesson.SecondLesson, NumberLesson.ThirdLesson, NumberLesson.FourthLesson, NumberLesson.FifthLesson, NumberLesson.SixthLesson, NumberLesson.SeventhLesson };
 
-        public static TimeSlot GetTimeSlot(int number)
+        public static NumberLesson GetNumberLesson(int number)
         {
-            return array[number - 1];
+            return array[number];
         }
     }
 }
