@@ -1,8 +1,10 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Schedule"
+    "\\Schedule",
+    "\\Schedule\\Data",
+    "\\Schedule\\Data\\Models"
   ],
-  "SelectedNode": "\\Schedule.sln",
+  "SelectedNode": "\\Schedule\\Data\\Models\\Lesson.cs",
   "PreviewInSolutionExplorer": false
 }
