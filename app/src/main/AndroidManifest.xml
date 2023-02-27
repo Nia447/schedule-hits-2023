@@ -12,16 +12,19 @@
         android:theme="@style/Theme.Schedule"
         tools:targetApi="31">
         <activity
+            android:name=".prepod"
+            android:exported="false" />
+        <activity
             android:name=".Student"
             android:exported="false" />
         <activity
-            android:name=".userchoise"
+            android:name=".MainActivity2"
             android:exported="false" />
         <activity
             android:name=".lol"
             android:exported="false" />
         <activity
-            android:name=".MainActivity2"
+            android:name=".userchoise"
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.Schedule.NoActionBar">

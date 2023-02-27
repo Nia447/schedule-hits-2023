@@ -11,6 +11,7 @@
         android:layout_width="200dp"
         android:layout_height="50dp"
         android:layout_marginTop="96dp"
+        android:onClick="teacheract"
         android:text="@string/prepod"
         app:layout_constraintBottom_toTopOf="@+id/studentButton"
         app:layout_constraintEnd_toEndOf="parent"
@@ -24,6 +25,7 @@
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="276dp"
+        android:onClick="studentact"
         android:text="@string/student"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -34,7 +36,9 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="148dp"
         android:text="@string/Choise"
-        tools:layout_editor_absoluteX="149dp"
-        tools:layout_editor_absoluteY="167dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
