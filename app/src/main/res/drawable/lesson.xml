@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+    <declare-styleable android:name="CustomToggle">
+        <attr android:name="customState" android:format="integer" />
+        <attr android:name="customText_0" android:format="string" />
+        <attr android:name="customText_1" android:format="string" />
+        <attr android:name="customText_2" android:format="string" />
+        <attr android:name="customText_3" android:format="string" />
+        <attr android:name="customImage_0" android:format="reference" />
+        <attr android:name="customImage_1" android:format="reference" />
+        <attr android:name="customImage_2" android:format="reference" />
+        <attr android:name="customImage_3" android:format="reference" />
+    </declare-styleable>
+</resources>
