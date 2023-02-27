@@ -5,6 +5,6 @@
     "\\Schedule\\Data",
     "\\Schedule\\Data\\Models"
   ],
-  "SelectedNode": "\\Schedule\\Data\\Models\\Lesson.cs",
+  "SelectedNode": "\\Schedule\\Data\\ScheduleDbContext.cs",
   "PreviewInSolutionExplorer": false
 }

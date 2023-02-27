@@ -13,6 +13,5 @@
         public GroupDto Group { get; set; }
         public TeacherDto Teacher { get; set; }
         public AudienceDto Audience { get; set; }
-        public TimeSlotDto TimeSlot { get; set; }
     }
 }
