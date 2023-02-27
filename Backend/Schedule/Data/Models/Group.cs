@@ -11,5 +11,6 @@ namespace Schedule.Data.Models
         [MaxLength(16)]
         [MinLength(1)]
         public string Number { get; set; }
+        ICollection<Lesson> Lessons { get; set; }
     }
 }

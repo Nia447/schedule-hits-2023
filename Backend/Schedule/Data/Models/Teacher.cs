@@ -10,5 +10,6 @@ namespace Schedule.Data.Models
         [Required]
         [RegularExpression(@"([A-Za-zА-Яа-я]+\s){1,2}[A-Za-zА-Яа-я]+")] // Формат: ФИ или ФИО
         public string FullName { get; set; }
+        ICollection<Lesson> Lessons { get; set; }
     }
 }

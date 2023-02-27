@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Schedule.Data;
+using Schedule.Service;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,6 +14,10 @@ builder.Services.AddSwaggerGen();
 // Database
 var connection = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddDbContext<ScheduleDbContext>(options => options.UseSqlServer(connection));
+
+// Services
+builder.Services.AddScoped<IConverterService, ConverterService>();
+builder.Services.AddScoped<IScheduleService, ScheduleService>();
 
 var app = builder.Build();
 
