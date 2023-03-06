@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "/a38/OzpqTd1och6THUmAfYO6gRHAsjsmSEunGrIhlsiUBnrQ4dO8fy0Trs+0r57FJM13i7J8N1oh1KLJHvWYg==",
+  "dgSpecHash": "+BvEwXkKj7oewk+Z8LgO6UvyvDa5z20SczcWYd2knPWfgNwe32f5e/DbbaoyxD5CJcYiU6ZvBdAfTNtEUr/4jQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\noutu\\Source\\Repos\\Nia447\\schedule-hits-2023\\Backend\\Schedule\\Schedule.csproj",
+  "projectFilePath": "C:\\Users\\noutu\\source\\repos\\Nia447\\schedule-hits-2023\\Backend\\Schedule\\Schedule.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\noutu\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\noutu\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",

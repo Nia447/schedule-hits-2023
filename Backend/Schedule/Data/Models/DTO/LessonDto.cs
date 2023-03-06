@@ -8,7 +8,6 @@
         public TypeLesson Type { get; set; }
         public DateTime StartPeriodDate { get; set; }
         public DateTime EndPeriodDate { get; set; }
-        public bool Infinity { get; set; }
         public SubjectDto Subject { get; set; }
         public GroupDto Group { get; set; }
         public TeacherDto Teacher { get; set; }

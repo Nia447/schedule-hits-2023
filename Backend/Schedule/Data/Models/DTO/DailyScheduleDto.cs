@@ -1,7 +1,8 @@
 ﻿namespace Schedule.Data.Models.DTO
 {
-    public class WeeklyScheduleDto
+    public class DailyScheduleDto
     {
+        public DateOnly Date { get; set; }
         public List<LessonDto> Lessons { get; set; }
     }
 }

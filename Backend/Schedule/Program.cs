@@ -15,6 +15,10 @@ builder.Services.AddSwaggerGen();
 var connection = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddDbContext<ScheduleDbContext>(options => options.UseSqlServer(connection));
 
+// Services
+builder.Services.AddScoped<IConverterService, ConverterService>();
+builder.Services.AddScoped<IScheduleService, ScheduleService>();
+
 //Services
 builder.Services.AddScoped<ISelectionService, SelectionService>();
 

@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Schedule.Data;
 
@@ -11,9 +12,11 @@ using Schedule.Data;
 namespace Schedule.Migrations
 {
     [DbContext(typeof(ScheduleDbContext))]
-    partial class ScheduleDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230304070618_DeleteAttributeInfinityInLesson")]
+    partial class DeleteAttributeInfinityInLesson
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -66,9 +69,6 @@ namespace Schedule.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid?>("AudienceId")
-                        .HasColumnType("uniqueidentifier");
-
                     b.Property<Guid?>("ChangeIdLesson")
                         .HasColumnType("uniqueidentifier");
 
@@ -97,8 +97,6 @@ namespace Schedule.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("AudienceId");
 
                     b.HasIndex("GroupId");
 
@@ -148,10 +146,6 @@ namespace Schedule.Migrations
 
             modelBuilder.Entity("Schedule.Data.Models.Lesson", b =>
                 {
-                    b.HasOne("Schedule.Data.Models.Audience", "Audience")
-                        .WithMany()
-                        .HasForeignKey("AudienceId");
-
                     b.HasOne("Schedule.Data.Models.Group", "Group")
                         .WithMany()
                         .HasForeignKey("GroupId");
@@ -163,8 +157,6 @@ namespace Schedule.Migrations
                     b.HasOne("Schedule.Data.Models.Teacher", "Teacher")
                         .WithMany()
                         .HasForeignKey("TeacherId");
-
-                    b.Navigation("Audience");
 
                     b.Navigation("Group");
 
