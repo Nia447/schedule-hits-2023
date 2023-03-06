@@ -11,7 +11,7 @@ class userchoise : AppCompatActivity() {
         setContentView(R.layout.activity_userchoise)
     }
     public fun studentact(view: View){
-        val studentInt = Intent(this,MainActivity::class.java)
+        val studentInt = Intent(this,stud::class.java)
         startActivity(studentInt)
 
     }

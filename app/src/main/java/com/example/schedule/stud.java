@@ -2,6 +2,7 @@ package com.example.schedule;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -21,6 +22,7 @@ public class stud extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_stud);
 
+
         mEditText = findViewById(R.id.input);
         mButton = findViewById(R.id.ok_button);
         mSharedPreferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
@@ -28,12 +30,23 @@ public class stud extends AppCompatActivity {
         mButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String groupNumber = mEditText.getText().toString();
-                SharedPreferences.Editor editor = mSharedPreferences.edit();
-                editor.putString("GroupNumber", groupNumber);
-                editor.apply();
-                System.out.println(mSharedPreferences);
+                if(mEditText.length() != 0 ) {
+                    String groupNumber = mEditText.getText().toString();
+                    SharedPreferences.Editor editor = mSharedPreferences.edit();
+                    editor.putString("GroupNumber", groupNumber);
+                    editor.apply();
+
+
+                    Intent intent = new Intent(stud.this, MainActivity.class);
+                    startActivity(intent);
+                    finish();
+                }
             }
         });
+
+
     }
+
+
+
 }

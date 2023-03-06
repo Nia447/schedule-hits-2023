@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         setupViewPager();
+
     }
     private void setupViewPager() {
         ViewPager viewPager = findViewById(R.id.view_pager);
