@@ -16,7 +16,7 @@ class userchoise : AppCompatActivity() {
 
     }
     public fun teacheract(view: View){
-        val prepodint = Intent(this,prepod::class.java)
+        val prepodint = Intent(this,PrepodActivity::class.java)
         startActivity(prepodint)
 
     }

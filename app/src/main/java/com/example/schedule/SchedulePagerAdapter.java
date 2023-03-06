@@ -12,7 +12,6 @@ public class SchedulePagerAdapter extends FragmentPagerAdapter {
 
     @Override
     public Fragment getItem(int position) {
-        // Возвращает соответствующий фрагмент в зависимости от позиции вкладки
         switch (position) {
             case 0:
                 return new MondayFragment();
@@ -35,13 +34,13 @@ public class SchedulePagerAdapter extends FragmentPagerAdapter {
 
     @Override
     public int getCount() {
-        // Возвращает общее количество вкладок
+
         return 7;
     }
 
     @Override
     public CharSequence getPageTitle(int position) {
-        // Возвращает заголовок вкладки
+
         switch (position) {
             case 0:
                 return "ПН";

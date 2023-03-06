@@ -16,14 +16,15 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".PrepodActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="false" />
         <activity
             android:name=".stud"
             android:exported="false" />
-        <activity
-            android:name=".prepod"
-            android:exported="false" />
+
         <activity
             android:name=".MainActivity2"
             android:exported="false" />
