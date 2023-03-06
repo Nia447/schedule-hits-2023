@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Schedule.Data.Models.DTO;
-using Schedule.Service;
+using Schedule.Services;
 
 namespace Schedule.Controllers
 {
@@ -16,15 +16,27 @@ namespace Schedule.Controllers
         }
 
         [HttpGet("group/{id}")]
-        public ActionResult<WeeklyScheduleDto> GetForGroup(Guid id)
+        public ActionResult<PeriodScheduleDto> GetForGroup([FromBody] PeriodDto period, Guid id)
         {
-            return new JsonResult(_scheduleService.GetWeeklyScheduleGroup(id));
+            if (!ModelState.IsValid)
+                return BadRequest();
+
+            if (_scheduleService.IsExitingGroup(id))
+                return StatusCode(404);
+
+            return new JsonResult(_scheduleService.GetPeriodScheduleGroup(period.DateFrom, period.DateTo, id));
         }
 
         [HttpGet("teacher/{id}")]
-        public ActionResult<WeeklyScheduleDto> GetForTeacher(Guid id)
+        public ActionResult<PeriodScheduleDto> GetForTeacher([FromBody] PeriodDto period, Guid id)
         {
-            return new JsonResult(_scheduleService.GetWeeklyScheduleTeacher(id));
+            if (!ModelState.IsValid)
+                return BadRequest();
+
+            if (_scheduleService.IsExitingTeacher(id))
+                return StatusCode(404);
+
+            return new JsonResult(_scheduleService.GetPeriodScheduleTeacher(period.DateFrom, period.DateTo, id));
         }
     }
 }

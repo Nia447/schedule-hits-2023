@@ -21,8 +21,6 @@ namespace Schedule.Data.Models
             ErrorMessage = "Value for {0} must be between {1} and {2}")]
         public DateTime? EndPeriodDate { get; set; }
 
-        public bool? Infinity { get; set; }
-
         public Guid? ChangeIdLesson { get; set; }
 
         public Group? Group { get; set; }
@@ -30,5 +28,7 @@ namespace Schedule.Data.Models
         public Subject? Subject { get; set; }
 
         public Teacher? Teacher { get; set; }
+
+        public Audience? Audience { get; set; }
     }
 }
