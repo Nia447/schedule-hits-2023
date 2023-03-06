@@ -6,9 +6,89 @@
     tools:context=".SaturdayFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/subjectTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Предмет:"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/subjectNameTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/subjectTextView"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/teacherTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/subjectTextView"
+            android:text="Преподаватель:"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/teacherNameTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/subjectNameTextView"
+            android:layout_toRightOf="@id/teacherTextView"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/groupTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/teacherTextView"
+            android:text="Группа:"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/groupNameTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/teacherNameTextView"
+            android:layout_toRightOf="@id/groupTextView"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/lessonTitleTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/groupTextView"
+            android:text="Название предмета:"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/lessonTitleNameTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/groupNameTextView"
+            android:layout_toRightOf="@id/lessonTitleTextView"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/classroomTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/lessonTitleTextView"
+            android:text="Номер аудитории:"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/classroomNumberTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/lessonTitleNameTextView"
+            android:layout_toRightOf="@id/classroomTextView"
+            android:textSize="16sp" />
+
+    </RelativeLayout>
 
 </FrameLayout>

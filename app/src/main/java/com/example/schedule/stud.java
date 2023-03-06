@@ -14,7 +14,7 @@ import android.widget.Toast;
 public class stud extends AppCompatActivity {
     private EditText mEditText;
     private Button mButton;
-    private SharedPreferences mSharedPreferences;
+    public SharedPreferences mSharedPreferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
