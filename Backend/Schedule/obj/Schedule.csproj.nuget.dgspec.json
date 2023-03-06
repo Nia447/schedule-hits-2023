@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\noutu\\Source\\Repos\\Nia447\\schedule-hits-2023\\Backend\\Schedule\\Schedule.csproj": {}
+    "C:\\Users\\noutu\\source\\repos\\Nia447\\schedule-hits-2023\\Backend\\Schedule\\Schedule.csproj": {}
   },
   "projects": {
-    "C:\\Users\\noutu\\Source\\Repos\\Nia447\\schedule-hits-2023\\Backend\\Schedule\\Schedule.csproj": {
+    "C:\\Users\\noutu\\source\\repos\\Nia447\\schedule-hits-2023\\Backend\\Schedule\\Schedule.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\noutu\\Source\\Repos\\Nia447\\schedule-hits-2023\\Backend\\Schedule\\Schedule.csproj",
+        "projectUniqueName": "C:\\Users\\noutu\\source\\repos\\Nia447\\schedule-hits-2023\\Backend\\Schedule\\Schedule.csproj",
         "projectName": "Schedule",
-        "projectPath": "C:\\Users\\noutu\\Source\\Repos\\Nia447\\schedule-hits-2023\\Backend\\Schedule\\Schedule.csproj",
+        "projectPath": "C:\\Users\\noutu\\source\\repos\\Nia447\\schedule-hits-2023\\Backend\\Schedule\\Schedule.csproj",
         "packagesPath": "C:\\Users\\noutu\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\noutu\\Source\\Repos\\Nia447\\schedule-hits-2023\\Backend\\Schedule\\obj\\",
+        "outputPath": "C:\\Users\\noutu\\source\\repos\\Nia447\\schedule-hits-2023\\Backend\\Schedule\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
