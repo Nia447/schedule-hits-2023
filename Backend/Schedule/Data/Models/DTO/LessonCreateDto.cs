@@ -10,7 +10,6 @@
         public DayOfTheWeek Day { get; set; }
         public TypeLesson Type { get; set; }
         public DateTime StartPeriodDate { get; set; }
-        public DateTime EndPeriodDate { get; set; }
-        public bool Infinity { get; set; }
+        public DateTime? EndPeriodDate { get; set; }
     }
 }

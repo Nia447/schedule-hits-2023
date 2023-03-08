@@ -15,13 +15,11 @@ namespace Schedule.Data.Models
 
         [Range(typeof(DateTime), "2022-09-01T00:01:01.001Z", "2025-01-01T00:01:01.000Z",
             ErrorMessage = "Value for {0} must be between {1} and {2}")]
-        public DateTime? StartPeriodDate { get; set; }
+        public DateTime StartPeriodDate { get; set; }
 
         [Range(typeof(DateTime), "2022-09-01T00:01:01.001Z", "2025-01-01T00:01:01.000Z",
             ErrorMessage = "Value for {0} must be between {1} and {2}")]
         public DateTime? EndPeriodDate { get; set; }
-
-        public bool? Infinity { get; set; }
 
         public Guid? ChangeIdLesson { get; set; }
 
@@ -30,5 +28,7 @@ namespace Schedule.Data.Models
         public Subject? Subject { get; set; }
 
         public Teacher? Teacher { get; set; }
+
+        public Audience? Audience { get; set; }
     }
 }

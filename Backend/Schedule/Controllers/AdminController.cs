@@ -1,64 +1,71 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Schedule.Data.Models.DTO;
+using Schedule.Services;
 
 namespace Schedule.Controllers
 {
     [ApiController]
-    [Route("api")]
+    [Route("api/schedule")]
     public class AdminController : ControllerBase
     {
-        [HttpPost("createLesson")]
-        public ActionResult<LessonCreateDto> PostLesson()
+        private readonly ILessonService _lessonService;
+
+        public AdminController(ILessonService lessonService)
         {
-            return BadRequest("Can not create lesson");
+            _lessonService = lessonService;
         }
 
-        /*[HttpDelete("deleteLesson")]
-        public ActionResult<LessonCreateDto> DeleteLesson()
+        #region Lesson
+        [HttpPost("lesson")]
+        public async Task<IActionResult> PostLesson([FromBody] LessonCreateDto lessonCreateDto)
         {
-            return BadRequest("Can not create lesson");
+            if (!ModelState.IsValid || _lessonService.IsCorrectLesson(lessonCreateDto).Result)
+                return BadRequest();
+
+            if (_lessonService.IsLessonExist(lessonCreateDto).Result)
+                return StatusCode(409);
+
+            await _lessonService.TryCreateLessonAsync(lessonCreateDto);
+
+            return Ok();
         }
 
-        [HttpPut("changeLesson")]
-        public ActionResult<LessonCreateDto> ChangeLesson()
+        [HttpDelete("lesson/{id}")]
+        public async Task<IActionResult> DeleteLesson(Guid id)
         {
-            return BadRequest("Can not create lesson");
+            if (!_lessonService.IsLessonExist(id).Result)
+                return StatusCode(404);
+
+            await _lessonService.TryDeleteLessonAsync(id);
+
+            return Ok();
         }
 
-        [HttpPost("createGroup")]
-        public ActionResult<LessonCreateDto> PostGroup()
+        [HttpPut("lesson/{id}")]
+        public async Task<IActionResult> ChangeLesson([FromBody] LessonEditDto lessonEditDto, Guid id)
         {
-            return BadRequest("Can not create lesson");
-        }
+            if (!ModelState.IsValid)
+                return BadRequest();
 
-        [HttpDelete("deleteGroup")]
-        public ActionResult<LessonCreateDto> DeleteGroup()
-        {
-            return BadRequest("Can not create lesson");
-        }
+            if (!_lessonService.IsLessonExist(id).Result)
+                return StatusCode(404);
 
-        [HttpPost("createTeacher")]
-        public ActionResult<LessonCreateDto> CreateTeacher()
-        {
-            return BadRequest("Can not create lesson");
-        }
+            if (lessonEditDto.DeletePrevLesson)
+            {
+                await _lessonService.TryChangeLessonAsync(id, lessonEditDto);
 
-        [HttpDelete("deleteGroup")]
-        public ActionResult<LessonCreateDto> DeleteTeacher()
-        {
-            return BadRequest("Can not create lesson");
-        }
+                return Ok();
+            }
+            else
+            {
+                if (_lessonService.IsAdditionalLessonExist(lessonEditDto).Result)
+                    return StatusCode(409);
 
-        [HttpPost("createAudience")]
-        public ActionResult<LessonCreateDto> CreateAudience()
-        {
-            return BadRequest("Can not create lesson");
-        }
+                await _lessonService.TryAddAdditionalLessonAsync(id, lessonEditDto);
 
-        [HttpDelete("deleteAudience")]
-        public ActionResult<LessonCreateDto> DeleteAudience()
-        {
-            return BadRequest("Can not create lesson");
-        }*/
+                return Ok();
+            }
+        }
+        #endregion
     }
 }
