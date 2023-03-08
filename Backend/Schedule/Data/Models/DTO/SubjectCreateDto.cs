@@ -2,6 +2,6 @@
 {
     public class SubjectCreateDto
     {
-        public string Number { get; set; }
+        public string Name { get; set; }
     }
 }

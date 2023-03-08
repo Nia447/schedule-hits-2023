@@ -38,7 +38,7 @@ namespace Schedule.Migrations
                     b.HasIndex("Number")
                         .IsUnique();
 
-                    b.ToTable("Audiences");
+                    b.ToTable("Audiences", (string)null);
                 });
 
             modelBuilder.Entity("Schedule.Data.Models.Group", b =>
@@ -57,7 +57,7 @@ namespace Schedule.Migrations
                     b.HasIndex("Number")
                         .IsUnique();
 
-                    b.ToTable("Groups");
+                    b.ToTable("Groups", (string)null);
                 });
 
             modelBuilder.Entity("Schedule.Data.Models.Lesson", b =>
@@ -104,7 +104,7 @@ namespace Schedule.Migrations
 
                     b.HasIndex("TeacherId");
 
-                    b.ToTable("Lessons");
+                    b.ToTable("Lessons", (string)null);
                 });
 
             modelBuilder.Entity("Schedule.Data.Models.Subject", b =>
@@ -123,7 +123,7 @@ namespace Schedule.Migrations
                     b.HasIndex("Name")
                         .IsUnique();
 
-                    b.ToTable("Subjects");
+                    b.ToTable("Subjects", (string)null);
                 });
 
             modelBuilder.Entity("Schedule.Data.Models.Teacher", b =>
@@ -141,7 +141,7 @@ namespace Schedule.Migrations
                     b.HasIndex("FullName")
                         .IsUnique();
 
-                    b.ToTable("Teachers");
+                    b.ToTable("Teachers", (string)null);
                 });
 
             modelBuilder.Entity("Schedule.Data.Models.Lesson", b =>
