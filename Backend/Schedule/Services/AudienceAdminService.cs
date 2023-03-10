@@ -31,7 +31,7 @@ namespace Schedule.Services
 
         public Task CreateAudience(AudienceCreateDto audienceCreateDto)
         {
-            _context.Audiences.AddAsync(new Audience()
+            _context.Audiences.Add(new Audience()
             {
                 Id = Guid.NewGuid(),
                 Number = audienceCreateDto.Number

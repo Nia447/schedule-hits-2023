@@ -22,6 +22,8 @@ namespace Schedule.Services
         {
             GroupListDto result = new();
 
+            _context.Groups.First();
+
             foreach (var group in _context.Groups.Where(x => x.Number.StartsWith(searchStr)).OrderBy(x => x.Number))
             {
                 GroupDto resultGroup = new()
@@ -54,7 +56,7 @@ namespace Schedule.Services
             return result;
         }
 
-        public AudienceListDto SelectAudienceBySearchStr(string searchStr)
+        public AudienceListDto SelectAudienceBySearchStr(string searchStr = "")
         {
             AudienceListDto result = new();
 
@@ -72,7 +74,7 @@ namespace Schedule.Services
             return result;
         }
 
-        public SubjectListDto SelectSubjectBySearchStr(string searchStr)
+        public SubjectListDto SelectSubjectBySearchStr(string searchStr = "")
         {
             SubjectListDto result = new();
 

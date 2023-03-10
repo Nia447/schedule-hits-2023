@@ -2,6 +2,6 @@
 {
     public class SubjectListDto 
     {
-        public List<SubjectDto> Subjects { get; set; }
+        public List<SubjectDto> Subjects { get; set; } = new List<SubjectDto>();
     }
 }

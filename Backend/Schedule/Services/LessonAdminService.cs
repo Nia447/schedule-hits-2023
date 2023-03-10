@@ -4,7 +4,7 @@ using Schedule.Data.Models.DTO;
 
 namespace Schedule.Services
 {
-    public interface ILessonService
+    public interface ILessonAdminService
     {
         Task<bool> TryCreateLessonAsync(LessonCreateDto lessonCreateDto);
         Task<bool> TryDeleteLessonAsync(Guid id);
@@ -15,11 +15,11 @@ namespace Schedule.Services
         Task<bool> IsCorrectLesson(LessonCreateDto lessonCreateDto);
         Task<bool> IsAdditionalLessonExist(LessonEditDto lessonEditDto);
     }
-    public class LessonService: ILessonService
+    public class LessonAdminService: ILessonAdminService
     {
         private readonly ScheduleDbContext _context;
 
-        public LessonService(ScheduleDbContext context)
+        public LessonAdminService(ScheduleDbContext context)
         {
             _context = context;
         }

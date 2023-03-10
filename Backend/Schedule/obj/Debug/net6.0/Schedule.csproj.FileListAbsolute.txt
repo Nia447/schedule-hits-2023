@@ -162,3 +162,4 @@ C:\Users\noutu\Source\Repos\Nia447\schedule-hits-2023\Backend\Schedule\obj\Debug
 C:\Users\noutu\Source\Repos\Nia447\schedule-hits-2023\Backend\Schedule\obj\Debug\net6.0\Schedule.pdb
 C:\Users\noutu\Source\Repos\Nia447\schedule-hits-2023\Backend\Schedule\obj\Debug\net6.0\Schedule.genruntimeconfig.cache
 C:\Users\noutu\Source\Repos\Nia447\schedule-hits-2023\Backend\Schedule\obj\Debug\net6.0\ref\Schedule.dll
+C:\Всё\My Work Space\schedule-hits-2023\Backend\Schedule\bin\Debug\net6.0\web.config

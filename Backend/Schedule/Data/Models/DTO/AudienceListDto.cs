@@ -2,6 +2,6 @@
 {
     public class AudienceListDto
     {
-        public List<AudienceDto> Audiences { get; set; }
+        public List<AudienceDto> Audiences { get; set; } = new List<AudienceDto>();
     }
 }

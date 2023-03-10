@@ -6,9 +6,9 @@ namespace Schedule.Services
 {
     public interface IGroupAdminService
     {
-        Task CreateGroup(GroupCreateDto groupCreateDto);
-        Task DeleteGroup(Guid id);
-        Task ChangeGroupParams(Guid id, GroupCreateDto groupCreateDto);
+        Task<bool> CreateGroup(GroupCreateDto groupCreateDto);
+        Task<bool> DeleteGroup(Guid id);
+        Task<bool> ChangeGroupParams(Guid id, GroupCreateDto groupCreateDto);
         Task<bool> IsGroupExist(GroupCreateDto groupCreateDto);
         Task<bool> IsGroupExist(Guid id);
     }
@@ -20,35 +20,56 @@ namespace Schedule.Services
         {
             _context = context;
         }
-        public Task ChangeGroupParams(Guid id, GroupCreateDto groupCreateDto)
+        public async Task<bool> ChangeGroupParams(Guid id, GroupCreateDto groupCreateDto)
         {
-            _context.Groups.First(x => x.Id == id).Number = groupCreateDto.Number;
-
-            _context.SaveChangesAsync();
-
-            return Task.CompletedTask;
-        }
-
-        public Task CreateGroup(GroupCreateDto groupCreateDto)
-        {
-            _context.Groups.AddAsync(new Group()
+            try
             {
-                Id = Guid.NewGuid(),
-                Number = groupCreateDto.Number
-            });
+                _context.Groups.First(x => x.Id == id).Number = groupCreateDto.Number;
 
-            _context.SaveChangesAsync();
+                await _context.SaveChangesAsync();
 
-            return Task.CompletedTask;
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
         }
 
-        public Task DeleteGroup(Guid id)
+        public async Task<bool> CreateGroup(GroupCreateDto groupCreateDto)
         {
-            _context.Groups.Remove(_context.Groups.First(x => x.Id == id));
+            try
+            {
+                _context.Groups.Add(new Group()
+                {
+                    Id = Guid.NewGuid(),
+                    Number = groupCreateDto.Number
+                });
 
-            _context.SaveChangesAsync();
+                await _context.SaveChangesAsync();
 
-            return Task.CompletedTask;
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public async Task<bool> DeleteGroup(Guid id)
+        {
+            try
+            {
+                _context.Groups.Remove(_context.Groups.First(x => x.Id == id));
+
+                await _context.SaveChangesAsync();
+
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
         }
 
         public Task<bool> IsGroupExist(GroupCreateDto groupCreateDto)

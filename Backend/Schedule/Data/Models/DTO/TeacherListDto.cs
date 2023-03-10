@@ -2,6 +2,6 @@
 {
     public class TeacherListDto 
     {
-        public List<TeacherDto> Teachers { get; set; }
+        public List<TeacherDto> Teachers { get; set; } = new List<TeacherDto>();
     }
 }

@@ -5,7 +5,7 @@ using Schedule.Services;
 namespace Schedule.Controllers
 {
 	[ApiController]
-	[Route("api")]
+	[Route("api/schedule")]
 	public class SelectionController : ControllerBase
 	{
 		private readonly ISelectionService _selectionService;
@@ -16,25 +16,25 @@ namespace Schedule.Controllers
 		}
 
 		[HttpGet("teachers")]
-		public ActionResult<TeacherListDto> GetTeachersList(string searchStr)
+		public ActionResult<TeacherListDto> GetTeachersList(string? searchStr = "")
         {
 			return _selectionService.SelectTeachersBySearchStr(searchStr);
         }
 
 		[HttpGet("groups")]
-		public ActionResult<TeacherListDto> GetGroupsList(string searchStr)
+		public ActionResult<GroupListDto> GetGroupsList(string? searchStr = "")
 		{
-			return _selectionService.SelectTeachersBySearchStr(searchStr);
+			return _selectionService.SelectGroupsBySearchStr(searchStr);
 		}
 		
-		[HttpGet("Audieces")]
-		public ActionResult<AudienceListDto> GetAudiencesList(string searchStr)
+		[HttpGet("audieces")]
+		public ActionResult<AudienceListDto> GetAudiencesList(string? searchStr = "")
 		{
 			return _selectionService.SelectAudienceBySearchStr(searchStr);
 		}
 
 		[HttpGet("subjects")]
-		public ActionResult<SubjectListDto> GetSubjctsList(string searchStr)
+		public ActionResult<SubjectListDto> GetSubjctsList(string? searchStr = "")
 		{
 			return _selectionService.SelectSubjectBySearchStr(searchStr);
 		}

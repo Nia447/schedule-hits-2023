@@ -12,33 +12,33 @@ namespace Schedule.Controllers
         private readonly IGroupAdminService _groupAdminService;
         private readonly ITeacherAdminService _teacherAdminService;
         private readonly ISubjectAdminService _subjectAdminService;
-        private readonly ILessonService _lessonService;
+        private readonly ILessonAdminService _lessonAdminService;
 
         public AdminController(
             IAudienceAdminService audienceAdminService,
             IGroupAdminService groupAdminService,
             ITeacherAdminService teacherAdminService,
             ISubjectAdminService subjectAdminService,
-            ILessonService lessonService)
+            ILessonAdminService lessonAdminService)
         {
             _audienceAdminService = audienceAdminService;
             _groupAdminService = groupAdminService;
             _teacherAdminService = teacherAdminService;
+            _lessonAdminService = lessonAdminService;
             _subjectAdminService = subjectAdminService;
-            _lessonService = lessonService;
         }
 
         #region Lesson
         [HttpPost("lesson")]
         public async Task<IActionResult> PostLesson([FromBody] LessonCreateDto lessonCreateDto)
         {
-            if (!ModelState.IsValid || _lessonService.IsCorrectLesson(lessonCreateDto).Result)
+            if (!ModelState.IsValid || _lessonAdminService.IsCorrectLesson(lessonCreateDto).Result)
                 return BadRequest();
 
-            if (_lessonService.IsLessonExist(lessonCreateDto).Result)
+            if (_lessonAdminService.IsLessonExist(lessonCreateDto).Result)
                 return StatusCode(409);
 
-            await _lessonService.TryCreateLessonAsync(lessonCreateDto);
+            await _lessonAdminService.TryCreateLessonAsync(lessonCreateDto);
 
             return Ok();
         }
@@ -46,10 +46,10 @@ namespace Schedule.Controllers
         [HttpDelete("lesson/{id}")]
         public async Task<IActionResult> DeleteLesson(Guid id)
         {
-            if (!_lessonService.IsLessonExist(id).Result)
+            if (!_lessonAdminService.IsLessonExist(id).Result)
                 return StatusCode(404);
 
-            await _lessonService.TryDeleteLessonAsync(id);
+            await _lessonAdminService.TryDeleteLessonAsync(id);
 
             return Ok();
         }
@@ -60,21 +60,21 @@ namespace Schedule.Controllers
             if (!ModelState.IsValid)
                 return BadRequest();
 
-            if (!_lessonService.IsLessonExist(id).Result)
+            if (!_lessonAdminService.IsLessonExist(id).Result)
                 return StatusCode(404);
 
             if (lessonEditDto.DeletePrevLesson)
             {
-                await _lessonService.TryChangeLessonAsync(id, lessonEditDto);
+                await _lessonAdminService.TryChangeLessonAsync(id, lessonEditDto);
 
                 return Ok();
             }
             else
             {
-                if (_lessonService.IsAdditionalLessonExist(lessonEditDto).Result)
+                if (_lessonAdminService.IsAdditionalLessonExist(lessonEditDto).Result)
                     return StatusCode(409);
 
-                await _lessonService.TryAddAdditionalLessonAsync(id, lessonEditDto);
+                await _lessonAdminService.TryAddAdditionalLessonAsync(id, lessonEditDto);
 
                 return Ok();
             }
