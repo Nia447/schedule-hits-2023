@@ -10,13 +10,13 @@
 		integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
 </head>
 
-<body>
+<body class="bg-light">
 	<header>
 		<div class="container my-3">
 			<div class="btn-group" role="group" aria-label="Navigation">
-				<button type="button" class="btn btn-secondary">Группы</button>
-				<button type="button" class="btn btn-secondary">Преподаватели</button>
-				<button type="button" class="btn btn-secondary">Аудитории</button>
+				<a class="btn btn-secondary" href="groups.html" role="button">Группы</a>
+				<a class="btn btn-secondary" href="teachers.html" role="button">Преподаватели</a>
+				<a class="btn btn-secondary" href="studyrooms.html" role="button" disabled>Аудитории</a>
 			</div>
 		</div>
 	</header>
@@ -36,8 +36,8 @@
 							</select>
 						</div>
 						<div class="form-group">
-							<label for="SrudyRoomSelect">Аудитория</label>
-							<select class="form-control" id="SrudyRoomSelect" disabled>
+							<label for="StudyRoomSelect">Аудитория</label>
+							<select class="form-control" id="StudyRoomSelect" disabled>
 								<option selected>Номер аудитории</option>
 								<option>2</option>
 								<option>3</option>
