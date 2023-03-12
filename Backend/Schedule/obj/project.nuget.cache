@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "n3hlfI0cBk4AnY+a2Vp/tAkbfQx6DrwDBTTrrEHVE/ZtsFxE+bcgDFei2xhwqvamEE96Qa3LvpkpTsjrfDjL6Q==",
+  "dgSpecHash": "Xlt+/zAkF31PWVeLRWoBz8eevPsqQpIHMxOy9Cpu0qIWJ4IMdgzoWhY85Z5ZE/u/Gi4jet2ye6KgO4OYzZtLLQ==",
   "success": true,
   "projectFilePath": "C:\\Всё\\My Work Space\\schedule-hits-2023\\Backend\\Schedule\\Schedule.csproj",
   "expectedPackageFiles": [
@@ -44,6 +44,8 @@
     "C:\\Users\\Nia477\\.nuget\\packages\\microsoft.win32.registry\\5.0.0\\microsoft.win32.registry.5.0.0.nupkg.sha512",
     "C:\\Users\\Nia477\\.nuget\\packages\\microsoft.win32.systemevents\\5.0.0\\microsoft.win32.systemevents.5.0.0.nupkg.sha512",
     "C:\\Users\\Nia477\\.nuget\\packages\\mono.texttemplating\\2.2.1\\mono.texttemplating.2.2.1.nupkg.sha512",
+    "C:\\Users\\Nia477\\.nuget\\packages\\mysqlconnector\\2.2.5\\mysqlconnector.2.2.5.nupkg.sha512",
+    "C:\\Users\\Nia477\\.nuget\\packages\\pomelo.entityframeworkcore.mysql\\7.0.0\\pomelo.entityframeworkcore.mysql.7.0.0.nupkg.sha512",
     "C:\\Users\\Nia477\\.nuget\\packages\\swashbuckle.aspnetcore\\6.2.3\\swashbuckle.aspnetcore.6.2.3.nupkg.sha512",
     "C:\\Users\\Nia477\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.2.3\\swashbuckle.aspnetcore.swagger.6.2.3.nupkg.sha512",
     "C:\\Users\\Nia477\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.2.3\\swashbuckle.aspnetcore.swaggergen.6.2.3.nupkg.sha512",

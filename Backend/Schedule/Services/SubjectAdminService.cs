@@ -6,9 +6,9 @@ namespace Schedule.Services
 {
     public interface ISubjectAdminService
     {
-        Task CreateSubject(SubjectCreateDto subjectCreateDto);
-        Task DeleteSubject(Guid id);
-        Task ChangeSubjectParams(Guid id, SubjectCreateDto subjectCreateDto);
+        Task<bool> CreateSubject(SubjectCreateDto subjectCreateDto);
+        Task<bool> DeleteSubject(Guid id);
+        Task<bool> ChangeSubjectParams(Guid id, SubjectCreateDto subjectCreateDto);
         Task<bool> IsSubjectExist(SubjectCreateDto subjectCreateDto);
         Task<bool> IsSubjectExist(Guid id);
     }
@@ -21,35 +21,35 @@ namespace Schedule.Services
             _context = context;
         }
 
-        public Task ChangeSubjectParams(Guid id, SubjectCreateDto subjectCreateDto)
+        public async Task<bool> ChangeSubjectParams(Guid id, SubjectCreateDto subjectCreateDto)
         {
             _context.Subjects.First(x => x.Id == id).Name = subjectCreateDto.Name;
 
-            _context.SaveChangesAsync();
+            await _context.SaveChangesAsync();
 
-            return Task.CompletedTask;
+            return true;
         }
 
-        public Task CreateSubject(SubjectCreateDto subjectCreateDto)
+        public async Task<bool> CreateSubject(SubjectCreateDto subjectCreateDto)
         {
-            _context.Subjects.AddAsync(new Subject()
+            _context.Subjects.Add(new Subject()
             {
                 Id = Guid.NewGuid(),
                 Name = subjectCreateDto.Name
             });
 
-            _context.SaveChangesAsync();
+            await _context.SaveChangesAsync();
 
-            return Task.CompletedTask;
+            return true;
         }
 
-        public Task DeleteSubject(Guid id)
+        public async Task<bool> DeleteSubject(Guid id)
         {
             _context.Subjects.Remove(_context.Subjects.First(x => x.Id == id));
 
-            _context.SaveChangesAsync();
+            await _context.SaveChangesAsync();
 
-            return Task.CompletedTask;
+            return true;
         }
 
         public Task<bool> IsSubjectExist(SubjectCreateDto subjectCreateDto)

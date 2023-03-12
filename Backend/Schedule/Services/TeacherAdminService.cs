@@ -6,9 +6,9 @@ namespace Schedule.Services
 {
     public interface ITeacherAdminService
     {
-        Task CreateTeacher(TeacherCreateDto teacherCreateDto);
-        Task DeleteTeacher(Guid id);
-        Task ChangeTeacherParams(Guid id, TeacherCreateDto teacherCreateDto);
+        Task<bool> CreateTeacher(TeacherCreateDto teacherCreateDto);
+        Task<bool> DeleteTeacher(Guid id);
+        Task<bool> ChangeTeacherParams(Guid id, TeacherCreateDto teacherCreateDto);
         Task<bool> IsTeacherExist(TeacherCreateDto teacherCreateDto);
         Task<bool> IsTeacherExist(Guid id);
     }
@@ -20,35 +20,35 @@ namespace Schedule.Services
         {
             _context = context;
         }
-        public Task ChangeTeacherParams(Guid id, TeacherCreateDto teacherCreateDto)
+        public async Task<bool> ChangeTeacherParams(Guid id, TeacherCreateDto teacherCreateDto)
         {
             _context.Teachers.First(x => x.Id == id).FullName = teacherCreateDto.FullName;
 
-            _context.SaveChangesAsync();
+            await _context.SaveChangesAsync();
 
-            return Task.CompletedTask;
+            return true;
         }
 
-        public Task CreateTeacher(TeacherCreateDto teacherCreateDto)
+        public async Task<bool> CreateTeacher(TeacherCreateDto teacherCreateDto)
         {
-            _context.Teachers.AddAsync(new Teacher()
+            _context.Teachers.Add(new Teacher()
             {
                 Id = Guid.NewGuid(),
                 FullName = teacherCreateDto.FullName
             });
 
-            _context.SaveChangesAsync();
+            await _context.SaveChangesAsync();
 
-            return Task.CompletedTask;
+            return true;
         }
 
-        public Task DeleteTeacher(Guid id)
+        public async Task<bool> DeleteTeacher(Guid id)
         {
             _context.Teachers.Remove(_context.Teachers.First(x => x.Id == id));
 
-            _context.SaveChangesAsync();
+            await _context.SaveChangesAsync();
 
-            return Task.CompletedTask;
+            return true;
         }
 
         public Task<bool> IsTeacherExist(TeacherCreateDto teacherCreateDto)

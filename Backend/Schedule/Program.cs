@@ -4,9 +4,17 @@ using Schedule.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddCors(options =>
+{
+    options.AddDefaultPolicy(
+        policy => policy.AllowAnyOrigin()
+            .AllowAnyHeader()
+            .AllowAnyMethod());
+});
+
 // Database
 var connection = builder.Configuration.GetConnectionString("DefaultConnection");
-builder.Services.AddDbContext<ScheduleDbContext>(options => options.UseSqlServer(connection));
+builder.Services.AddDbContext<ScheduleDbContext>();
 
 // Services
 builder.Services.AddScoped<IAudienceAdminService, AudienceAdminService>();
@@ -26,20 +34,18 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 
-builder.Services.AddCors(options =>
-{
-    options.AddPolicy("CorsApi",
-        builder => builder.WithOrigins("https://26.183.203.98:8082")
-            .AllowAnyHeader()
-            .AllowAnyMethod());
-});
 
 var app = builder.Build();
 
-app.UseCors("CorsApi");
+app.UseCors();
+
+// Auto Migration
+using var serviceScope = app.Services.CreateScope();
+var context = serviceScope.ServiceProvider.GetService<ScheduleDbContext>();
+context?.Database.Migrate();
 
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
+if (app.Environment.IsDevelopment() || true)
 {
     app.UseSwagger();
     app.UseSwaggerUI();

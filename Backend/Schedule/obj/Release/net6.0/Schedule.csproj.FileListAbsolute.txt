@@ -81,3 +81,5 @@ C:\Всё\My Work Space\schedule-hits-2023\Backend\Schedule\obj\Release\net6.0\S
 C:\Всё\My Work Space\schedule-hits-2023\Backend\Schedule\obj\Release\net6.0\Schedule.genruntimeconfig.cache
 C:\Всё\My Work Space\schedule-hits-2023\Backend\Schedule\obj\Release\net6.0\ref\Schedule.dll
 C:\Всё\My Work Space\schedule-hits-2023\Backend\Schedule\bin\Release\net6.0\web.config
+C:\Всё\My Work Space\schedule-hits-2023\Backend\Schedule\bin\Release\net6.0\MySqlConnector.dll
+C:\Всё\My Work Space\schedule-hits-2023\Backend\Schedule\bin\Release\net6.0\Pomelo.EntityFrameworkCore.MySql.dll

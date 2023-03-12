@@ -6,9 +6,9 @@ namespace Schedule.Services
 {
     public interface IAudienceAdminService
     {
-        Task CreateAudience(AudienceCreateDto audienceCreateDto);
-        Task DeleteAudience(Guid id);
-        Task ChangeAudiencepParams(Guid id, AudienceCreateDto audienceCreateDto);
+        Task<bool> CreateAudience(AudienceCreateDto audienceCreateDto);
+        Task<bool> DeleteAudience(Guid id);
+        Task<bool> ChangeAudiencepParams(Guid id, AudienceCreateDto audienceCreateDto);
         Task<bool> IsAudienceExist(AudienceCreateDto audienceCreateDto);
         Task<bool> IsAudienceExist(Guid id);
     }
@@ -20,16 +20,16 @@ namespace Schedule.Services
         {
             _context = context;
         }
-        public Task ChangeAudiencepParams(Guid id, AudienceCreateDto audienceCreateDto)
+        public async Task<bool> ChangeAudiencepParams(Guid id, AudienceCreateDto audienceCreateDto)
         {
             _context.Audiences.First(x => x.Id == id).Number = audienceCreateDto.Number;
 
-            _context.SaveChangesAsync();
+            await _context.SaveChangesAsync();
 
-            return Task.CompletedTask;
+            return true;
         }
 
-        public Task CreateAudience(AudienceCreateDto audienceCreateDto)
+        public async Task<bool> CreateAudience(AudienceCreateDto audienceCreateDto)
         {
             _context.Audiences.Add(new Audience()
             {
@@ -37,18 +37,18 @@ namespace Schedule.Services
                 Number = audienceCreateDto.Number
             });
 
-            _context.SaveChangesAsync();
+            await _context.SaveChangesAsync();
 
-            return Task.CompletedTask;
+            return true;
         }
 
-        public Task DeleteAudience(Guid id)
+        public async Task<bool> DeleteAudience(Guid id)
         {
             _context.Audiences.Remove(_context.Audiences.First(x => x.Id == id));
 
-            _context.SaveChangesAsync();
+            await _context.SaveChangesAsync();
 
-            return Task.CompletedTask;
+            return true;
         }
 
         public Task<bool> IsAudienceExist(AudienceCreateDto audienceCreateDto)
