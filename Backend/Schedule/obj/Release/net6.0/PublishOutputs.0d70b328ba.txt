@@ -33,6 +33,8 @@ C:\Всё\My Work Space\schedule-hits-2023\Backend\Schedule\obj\Release\net6.0\P
 C:\Всё\My Work Space\schedule-hits-2023\Backend\Schedule\obj\Release\net6.0\PubTmp\Out\Microsoft.OpenApi.dll
 C:\Всё\My Work Space\schedule-hits-2023\Backend\Schedule\obj\Release\net6.0\PubTmp\Out\Microsoft.SqlServer.Server.dll
 C:\Всё\My Work Space\schedule-hits-2023\Backend\Schedule\obj\Release\net6.0\PubTmp\Out\Microsoft.Win32.SystemEvents.dll
+C:\Всё\My Work Space\schedule-hits-2023\Backend\Schedule\obj\Release\net6.0\PubTmp\Out\MySqlConnector.dll
+C:\Всё\My Work Space\schedule-hits-2023\Backend\Schedule\obj\Release\net6.0\PubTmp\Out\Pomelo.EntityFrameworkCore.MySql.dll
 C:\Всё\My Work Space\schedule-hits-2023\Backend\Schedule\obj\Release\net6.0\PubTmp\Out\Swashbuckle.AspNetCore.Swagger.dll
 C:\Всё\My Work Space\schedule-hits-2023\Backend\Schedule\obj\Release\net6.0\PubTmp\Out\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Всё\My Work Space\schedule-hits-2023\Backend\Schedule\obj\Release\net6.0\PubTmp\Out\Swashbuckle.AspNetCore.SwaggerUI.dll

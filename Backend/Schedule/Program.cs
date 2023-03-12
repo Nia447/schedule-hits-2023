@@ -39,10 +39,6 @@ var app = builder.Build();
 
 app.UseCors();
 
-// Auto Migration
-using var serviceScope = app.Services.CreateScope();
-var context = serviceScope.ServiceProvider.GetService<ScheduleDbContext>();
-context?.Database.Migrate();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment() || true)

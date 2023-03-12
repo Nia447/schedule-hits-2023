@@ -2,7 +2,6 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
-using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Schedule.Data;
@@ -12,8 +11,8 @@ using Schedule.Data;
 namespace Schedule.Migrations
 {
     [DbContext(typeof(ScheduleDbContext))]
-    [Migration("20230227125815_AddedCanBeNullPropertyInLesson")]
-    partial class AddedCanBeNullPropertyInLesson
+    [Migration("20230312155235_Initial")]
+    partial class Initial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -21,20 +20,18 @@ namespace Schedule.Migrations
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("ProductVersion", "7.0.3")
-                .HasAnnotation("Relational:MaxIdentifierLength", 128);
-
-            SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
+                .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
             modelBuilder.Entity("Schedule.Data.Models.Audience", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("char(36)");
 
                     b.Property<string>("Number")
                         .IsRequired()
                         .HasMaxLength(128)
-                        .HasColumnType("nvarchar(128)");
+                        .HasColumnType("varchar(128)");
 
                     b.HasKey("Id");
 
@@ -48,12 +45,12 @@ namespace Schedule.Migrations
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("char(36)");
 
                     b.Property<string>("Number")
                         .IsRequired()
                         .HasMaxLength(16)
-                        .HasColumnType("nvarchar(16)");
+                        .HasColumnType("varchar(16)");
 
                     b.HasKey("Id");
 
@@ -67,39 +64,41 @@ namespace Schedule.Migrations
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("char(36)");
+
+                    b.Property<Guid?>("AudienceId")
+                        .HasColumnType("char(36)");
 
                     b.Property<Guid?>("ChangeIdLesson")
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("char(36)");
 
                     b.Property<int?>("Day")
                         .HasColumnType("int");
 
                     b.Property<DateTime?>("EndPeriodDate")
-                        .HasColumnType("datetime2");
+                        .HasColumnType("datetime(6)");
 
                     b.Property<Guid?>("GroupId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<bool?>("Infinity")
-                        .HasColumnType("bit");
+                        .HasColumnType("char(36)");
 
                     b.Property<int?>("NumberLesson")
                         .HasColumnType("int");
 
-                    b.Property<DateTime?>("StartPeriodDate")
-                        .HasColumnType("datetime2");
+                    b.Property<DateTime>("StartPeriodDate")
+                        .HasColumnType("datetime(6)");
 
                     b.Property<Guid?>("SubjectId")
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("char(36)");
 
                     b.Property<Guid?>("TeacherId")
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("char(36)");
 
                     b.Property<int?>("Type")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("AudienceId");
 
                     b.HasIndex("GroupId");
 
@@ -114,12 +113,12 @@ namespace Schedule.Migrations
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("char(36)");
 
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(128)
-                        .HasColumnType("nvarchar(128)");
+                        .HasColumnType("varchar(128)");
 
                     b.HasKey("Id");
 
@@ -133,11 +132,11 @@ namespace Schedule.Migrations
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("char(36)");
 
                     b.Property<string>("FullName")
                         .IsRequired()
-                        .HasColumnType("nvarchar(450)");
+                        .HasColumnType("varchar(255)");
 
                     b.HasKey("Id");
 
@@ -149,6 +148,10 @@ namespace Schedule.Migrations
 
             modelBuilder.Entity("Schedule.Data.Models.Lesson", b =>
                 {
+                    b.HasOne("Schedule.Data.Models.Audience", "Audience")
+                        .WithMany()
+                        .HasForeignKey("AudienceId");
+
                     b.HasOne("Schedule.Data.Models.Group", "Group")
                         .WithMany()
                         .HasForeignKey("GroupId");
@@ -160,6 +163,8 @@ namespace Schedule.Migrations
                     b.HasOne("Schedule.Data.Models.Teacher", "Teacher")
                         .WithMany()
                         .HasForeignKey("TeacherId");
+
+                    b.Navigation("Audience");
 
                     b.Navigation("Group");
 
