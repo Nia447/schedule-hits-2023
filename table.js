@@ -70,6 +70,7 @@ for (let i = 1; i < 7; i++)
 }
 
 setTableHeders();
+setLessons();
 
 function setTableHeders()
 {
@@ -79,4 +80,17 @@ function setTableHeders()
     {
         ths[i].innerHTML = `${headers[i].day}<br>${headers[i].fulldate.toLocaleDateString()}`;
     }
+}
+
+function setLessonsForSelect(subjects)
+{
+    let select = document.getElementById('SubjectSelect');
+    select.innerHTML = '';
+    for (let i = 0; i < subjects.length; i++){
+        let option = document.createElement('option');
+        option.value = subjects[i].id;
+        option.innerHTML = subjects[i].name;
+        select.appendChild(option);
+    }
+
 }
