@@ -1,21 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Всё\\My Work Space\\schedule-hits-2023\\Backend\\Schedule\\Schedule.csproj": {}
+    "C:\\Users\\noutu\\source\\repos\\Nia447\\schedule-hits-2023\\Backend\\Schedule\\Schedule.csproj": {}
   },
   "projects": {
-    "C:\\Всё\\My Work Space\\schedule-hits-2023\\Backend\\Schedule\\Schedule.csproj": {
+    "C:\\Users\\noutu\\source\\repos\\Nia447\\schedule-hits-2023\\Backend\\Schedule\\Schedule.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Всё\\My Work Space\\schedule-hits-2023\\Backend\\Schedule\\Schedule.csproj",
+        "projectUniqueName": "C:\\Users\\noutu\\source\\repos\\Nia447\\schedule-hits-2023\\Backend\\Schedule\\Schedule.csproj",
         "projectName": "Schedule",
-        "projectPath": "C:\\Всё\\My Work Space\\schedule-hits-2023\\Backend\\Schedule\\Schedule.csproj",
-        "packagesPath": "C:\\Users\\Nia477\\.nuget\\packages\\",
-        "outputPath": "C:\\Всё\\My Work Space\\schedule-hits-2023\\Backend\\Schedule\\obj\\",
+        "projectPath": "C:\\Users\\noutu\\source\\repos\\Nia447\\schedule-hits-2023\\Backend\\Schedule\\Schedule.csproj",
+        "packagesPath": "C:\\Users\\noutu\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\noutu\\source\\repos\\Nia447\\schedule-hits-2023\\Backend\\Schedule\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Nia477\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\noutu\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
@@ -41,10 +47,6 @@
           "targetAlias": "net6.0",
           "dependencies": {
             "Microsoft.EntityFrameworkCore": {
-              "target": "Package",
-              "version": "[7.0.3, )"
-            },
-            "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
               "version": "[7.0.3, )"
             },
@@ -81,7 +83,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
         }
       }
     }

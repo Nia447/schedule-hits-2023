@@ -11,6 +11,13 @@ namespace Schedule.Services
 
     public class ConverterService: IConverterService
     {
+        ScheduleDbContext _context;
+
+        public ConverterService (ScheduleDbContext context)
+        {
+            _context = context;
+        }
+
         public LessonDto ToLessonDto(Lesson lesson)
         {
             return new LessonDto
@@ -21,15 +28,26 @@ namespace Schedule.Services
                 Type = (TypeLesson)lesson.Type,
                 StartPeriodDate = (DateTime)lesson.StartPeriodDate,
                 EndPeriodDate = (DateTime)lesson.EndPeriodDate,
-                Subject = ToSubjectDto(lesson.Subject),
-                Group = ToGroupDto(lesson.Group),
-                Teacher = ToTeacherDto(lesson.Teacher),
-                Audience = ToAudienceDto(lesson.Audience)
+                Subject = ToSubjectDto(lesson.SubjectId),
+                Group = ToGroupDto(lesson.GroupId),
+                Teacher = ToTeacherDto(lesson.TeacherId),
+                Audience = ToAudienceDto(lesson.AudienceId)
             };
         }
 
-        public SubjectDto ToSubjectDto(Subject subject)
+        public SubjectDto ToSubjectDto(Guid? id)
         {
+            var subject = _context.Subjects.FirstOrDefault(x => x.Id == id);
+
+            if (subject == null)
+            {
+                return new SubjectDto
+                {
+                    Id = Guid.NewGuid(),
+                    Name = "null"
+                };
+            }
+
             return new SubjectDto
             {
                 Id = subject.Id,
@@ -37,8 +55,18 @@ namespace Schedule.Services
             };
         }
 
-        public GroupDto ToGroupDto(Group group)
+        public GroupDto ToGroupDto(Guid? id)
         {
+            var group = _context.Groups.FirstOrDefault(x => x.Id == id);
+
+            if (group == null)
+            {
+                return new GroupDto
+                {
+                    Id = Guid.NewGuid(),
+                    Number = "null",
+                };
+            }
             return new GroupDto
             {
                 Id = group.Id,
@@ -46,8 +74,14 @@ namespace Schedule.Services
             };
         }
 
-        public TeacherDto ToTeacherDto(Teacher teacher)
+        public TeacherDto ToTeacherDto(Guid? id)
         {
+            var teacher = _context.Teachers.FirstOrDefault(x => x.Id == id);
+
+            if (teacher == null)
+            {
+                return new TeacherDto { Id = Guid.NewGuid(), FullName = "null" };
+            }
             return new TeacherDto
             {
                 Id = teacher.Id,
@@ -55,8 +89,14 @@ namespace Schedule.Services
             };
         }
 
-        public AudienceDto ToAudienceDto(Audience audience)
+        public AudienceDto ToAudienceDto(Guid? id)
         {
+            var audience = _context.Audiences.FirstOrDefault(x => x.Id == id);
+
+            if (audience == null)
+            {
+                return new AudienceDto { Id = Guid.NewGuid(), Number = "null" };
+            }
             return new AudienceDto
             {
                 Id = audience.Id,

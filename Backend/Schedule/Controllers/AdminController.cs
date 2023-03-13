@@ -32,7 +32,7 @@ namespace Schedule.Controllers
         [HttpPost("lesson")]
         public async Task<IActionResult> PostLesson([FromBody] LessonCreateDto lessonCreateDto)
         {
-            if (!ModelState.IsValid || _lessonAdminService.IsCorrectLesson(lessonCreateDto).Result)
+            if (!ModelState.IsValid)
                 return BadRequest();
 
             if (_lessonAdminService.IsLessonExist(lessonCreateDto).Result)
@@ -106,13 +106,13 @@ namespace Schedule.Controllers
         }
 
         [HttpPut("group/{id}")]
-        public async Task<IActionResult> CreateTeacher(Guid id, [FromBody] GroupCreateDto groupCreateDto)
+        public async Task<IActionResult> ChangeGroup(Guid id, [FromBody] GroupCreateDto groupCreateDto)
         {
             if (!ModelState.IsValid)
                 return BadRequest();
-            if (!_groupAdminService.IsGroupExist(id).Result)
+            if (_groupAdminService.IsGroupExist(id).Result)
                 return StatusCode(404);
-
+             
             await _groupAdminService.ChangeGroupParams(id, groupCreateDto);
 
             return Ok();
@@ -178,18 +178,18 @@ namespace Schedule.Controllers
 
             await _subjectAdminService.DeleteSubject(id);
 
-            return BadRequest("Can not create lesson");
+            return Ok();
         }
 
         [HttpPut("subject/{id}")]
-        public async Task<IActionResult> ChangeSubject(Guid id, [FromBody] SubjectCreateDto audienceCreateDto)
+        public async Task<IActionResult> ChangeSubject(Guid id, [FromBody] SubjectCreateDto subjectCreateDto)
         {
             if (!ModelState.IsValid)
                 return BadRequest();
-            if (_subjectAdminService.IsSubjectExist(audienceCreateDto).Result)
+            if (_subjectAdminService.IsSubjectExist(subjectCreateDto).Result)
                 return StatusCode(409);
 
-            await _subjectAdminService.ChangeSubjectParams(id, audienceCreateDto);
+            await _subjectAdminService.ChangeSubjectParams(id, subjectCreateDto);
 
             return Ok();
         }
@@ -216,7 +216,7 @@ namespace Schedule.Controllers
 
             await _teacherAdminService.DeleteTeacher(id);
 
-            return BadRequest("Can not create lesson");
+            return Ok();
         }
 
         [HttpPut("teacher/{id}")]

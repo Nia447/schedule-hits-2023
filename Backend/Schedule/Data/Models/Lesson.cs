@@ -23,12 +23,12 @@ namespace Schedule.Data.Models
 
         public Guid? ChangeIdLesson { get; set; }
 
-        public Group? Group { get; set; }
+        public Guid? GroupId { get; set; }
 
-        public Subject? Subject { get; set; }
+        public Guid? SubjectId { get; set; }
 
-        public Teacher? Teacher { get; set; }
+        public Guid? TeacherId { get; set; }
 
-        public Audience? Audience { get; set; }
+        public Guid? AudienceId { get; set; }
     }
 }

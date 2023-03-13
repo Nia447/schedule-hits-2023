@@ -2,6 +2,6 @@
 {
     public class PeriodScheduleDto
     {
-        public List<DailyScheduleDto> Days { get; set; }
+        public List<DailyScheduleDto> Days { get; set; } = new List<DailyScheduleDto>();
     }
 }

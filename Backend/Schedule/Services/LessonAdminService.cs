@@ -36,10 +36,10 @@ namespace Schedule.Services
                     Type = lessonCreateDto.Type,
                     StartPeriodDate = lessonCreateDto.StartPeriodDate,
                     EndPeriodDate = lessonCreateDto.EndPeriodDate,
-                    Group = _context.Groups.First(x => x.Id == lessonCreateDto.IdGroup),
-                    Subject = _context.Subjects.First(x => x.Id == lessonCreateDto.IdSubject),
-                    Teacher = _context.Teachers.First(x => x.Id == lessonCreateDto.IdTeacher),
-                    Audience = _context.Audiences.First(x => x.Id == lessonCreateDto.IdAudience),
+                    GroupId = lessonCreateDto.IdGroup,
+                    SubjectId = lessonCreateDto.IdSubject,
+                    TeacherId = lessonCreateDto.IdTeacher,
+                    AudienceId = lessonCreateDto.IdAudience,
                 });
 
                 await _context.SaveChangesAsync();
@@ -79,14 +79,14 @@ namespace Schedule.Services
                 lesson.Type = lessonEditDto.Type;
                 lesson.StartPeriodDate = lessonEditDto.StartPeriodDate;
                 lesson.EndPeriodDate = lessonEditDto.EndPeriodDate;
-                if (lessonEditDto.IdGroup != lesson.Group.Id)
-                    lesson.Group = _context.Groups.First(x => x.Id == lessonEditDto.IdGroup);
-                if (lessonEditDto.IdTeacher != lesson.Teacher.Id)
-                    lesson.Teacher = _context.Teachers.First(x => x.Id == lessonEditDto.IdTeacher);
-                if (lessonEditDto.IdSubject != lesson.Subject.Id)
-                    lesson.Subject = _context.Subjects.First(x => x.Id == lessonEditDto.IdSubject);
-                if (lessonEditDto.IdAudience != lesson.Audience.Id)
-                    lesson.Audience = _context.Audiences.First(x => x.Id == lessonEditDto.IdAudience);
+                if (lessonEditDto.IdGroup != lesson.GroupId)
+                    lesson.GroupId = lessonEditDto.IdGroup;
+                if (lessonEditDto.IdTeacher != lesson.TeacherId)
+                    lesson.TeacherId = lessonEditDto.IdTeacher;
+                if (lessonEditDto.IdSubject != lesson.SubjectId)
+                    lesson.SubjectId = lessonEditDto.IdSubject;
+                if (lessonEditDto.IdAudience != lesson.AudienceId)
+                    lesson.AudienceId = lessonEditDto.IdAudience;
 
                 await _context.SaveChangesAsync();
 
@@ -111,10 +111,10 @@ namespace Schedule.Services
                     Type = lessonEditDto.Type,
                     StartPeriodDate = lessonEditDto.StartPeriodDate,
                     EndPeriodDate = lessonEditDto.EndPeriodDate,
-                    Group = _context.Groups.First(x => x.Id == lessonEditDto.IdGroup),
-                    Subject = _context.Subjects.First(x => x.Id == lessonEditDto.IdSubject),
-                    Teacher = _context.Teachers.First(x => x.Id == lessonEditDto.IdTeacher),
-                    Audience = _context.Audiences.First(x => x.Id == lessonEditDto.IdAudience),
+                    GroupId = lessonEditDto.IdGroup,
+                    TeacherId = lessonEditDto.IdTeacher,
+                    SubjectId = lessonEditDto.IdSubject,
+                    AudienceId = lessonEditDto.IdAudience,
                 });
 
                 await _context.SaveChangesAsync();
@@ -140,9 +140,9 @@ namespace Schedule.Services
                                                             x.EndPeriodDate == null) ||
                                                             (x.EndPeriodDate > lessonCreateDto.StartPeriodDate) &&
                                                             lessonCreateDto.EndPeriodDate == null) &&
-                                                            (x.Group.Id == lessonCreateDto.IdGroup ||
-                                                            x.Teacher.Id == lessonCreateDto.IdTeacher ||
-                                                            x.Audience.Id == lessonCreateDto.IdAudience));
+                                                            (x.GroupId == lessonCreateDto.IdGroup ||
+                                                            x.TeacherId == lessonCreateDto.IdTeacher ||
+                                                            x.AudienceId == lessonCreateDto.IdAudience));
             if (result != null)
                 return Task.FromResult(true);
             return Task.FromResult(false);

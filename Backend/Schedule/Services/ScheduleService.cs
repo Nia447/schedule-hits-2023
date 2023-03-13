@@ -25,7 +25,7 @@ namespace Schedule.Services
 
         public PeriodScheduleDto GetPeriodScheduleGroup(DateTime dateFrom, DateTime dateTo, Guid id)
         {
-            var lessons = _context.Lessons.Where(x => x.ChangeIdLesson == null && x.Group != null && x.Group.Id == id && (x.EndPeriodDate == null || dateFrom < x.EndPeriodDate || dateTo > x.StartPeriodDate)).OrderBy(x => x.Day);
+            var lessons = _context.Lessons.Where(x => x.ChangeIdLesson == null && x.GroupId != null && x.GroupId == id && (x.EndPeriodDate == null || dateFrom < x.EndPeriodDate || dateTo > x.StartPeriodDate)).OrderBy(x => x.Day);
             PeriodScheduleDto result = new();
             List<Guid> ExceptionalGuidLessons = new();
 
@@ -66,7 +66,7 @@ namespace Schedule.Services
 
         public PeriodScheduleDto GetPeriodScheduleTeacher(DateTime dateFrom, DateTime dateTo, Guid id)
         {
-            var lessons = _context.Lessons.Where(x => x.ChangeIdLesson == null && x.Teacher != null && x.Teacher.Id == id && (x.EndPeriodDate == null || dateFrom < x.EndPeriodDate || dateTo > x.StartPeriodDate)).OrderBy(x => x.Day);
+            var lessons = _context.Lessons.Where(x => x.ChangeIdLesson == null && x.TeacherId != null && x.TeacherId == id && (x.EndPeriodDate == null || dateFrom < x.EndPeriodDate || dateTo > x.StartPeriodDate)).OrderBy(x => x.Day);
             PeriodScheduleDto result = new();
             List<Guid> ExceptionalGuidLessons = new();
 

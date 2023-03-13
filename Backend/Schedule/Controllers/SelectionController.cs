@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Schedule.Data.Models;
 using Schedule.Data.Models.DTO;
 using Schedule.Services;
 
@@ -37,6 +38,11 @@ namespace Schedule.Controllers
 		public ActionResult<SubjectListDto> GetSubjctsList(string? searchStr = "")
 		{
 			return _selectionService.SelectSubjectBySearchStr(searchStr);
+		}
+		[HttpGet("lessons")]
+		public ActionResult<List<LessonDto>> GetLessonsList()
+		{
+			return _selectionService.SelectLessons();
 		}
 	}
 }
