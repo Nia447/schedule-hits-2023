@@ -10,7 +10,7 @@
 		integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
 </head>
 
-<body class="bg-light">
+<body class="bg-light" onload="getStudyRooms()">
 	<header>
 		<div class="container my-3">
 			<div class="btn-group" role="group" aria-label="Navigation">
@@ -26,18 +26,8 @@
 				<div class="col p-4 bg-white rounded">
 					<form>
 						<div class="form-group">
-							<label for="BuildingSelect">Корпус</label>
-							<select class="form-control" id="BuildingSelect">
-								<option selected>Номер корпуса</option>
-								<option>2</option>
-								<option>3</option>
-								<option>4</option>
-								<option>5</option>
-							</select>
-						</div>
-						<div class="form-group">
-							<label for="StudyRoomSelect">Аудитория</label>
-							<select class="form-control" id="StudyRoomSelect" disabled>
+							<label for="studyRoomSelect">Аудитория</label>
+							<select class="form-control" id="studyRoomSelect">
 								<option selected>Номер аудитории</option>
 								<option>2</option>
 								<option>3</option>
@@ -54,18 +44,8 @@
 				<div class="col p-4 bg-white rounded">
 					<form>
 						<div class="form-group">
-							<label for="BuildingSelect">Корпус</label>
-							<select class="form-control" id="BuildingSelect">
-								<option selected>Номер корпуса</option>
-								<option>2</option>
-								<option>3</option>
-								<option>4</option>
-								<option>5</option>
-							</select>
-						</div>
-						<div class="form-group">
-							<label for="StudyRoomInput">Аудитория</label>
-							<input type="text" class="form-control" id="StudyRoomInput" placeholder="Номер аудитории">
+							<label for="studyRoomInput">Аудитория</label>
+							<input type="text" class="form-control" id="studyRoomInput" placeholder="Номер аудитории">
 						</div>
 						<button type="button" class="btn btn-primary">Добавить аудиторию ›</button>
 					</form>
@@ -73,6 +53,7 @@
 			</div>
 		</div>
 	</main>
+	<script src="script.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
 		integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
 		crossorigin="anonymous"></script>
