@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Controller_SelectedScaffolderID>MvcControllerEmptyScaffolder</Controller_SelectedScaffolderID>
     <Controller_SelectedScaffolderCategoryPath>root/Common/MVC/Controller</Controller_SelectedScaffolderCategoryPath>
-    <NameOfLastUsedPublishProfile>FolderProfile2</NameOfLastUsedPublishProfile>
+    <NameOfLastUsedPublishProfile>C:\Всё\My Work Space\schedule-hits-2023\Backend\Schedule\Properties\PublishProfiles\FolderProfile4.pubxml</NameOfLastUsedPublishProfile>
     <ActiveDebugProfile>Schedule</ActiveDebugProfile>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">

@@ -16,19 +16,20 @@ namespace Schedule.Controllers
         }
 
         [HttpGet("group/{id}")]
-        public ActionResult<PeriodScheduleDto> GetForGroup(Guid id, [FromQuery] DateTime dateFrom, [FromQuery] DateTime dateTo)
+        public ActionResult<PeriodScheduleDto> GetForGroup(Guid id)
         {
+
             if (!ModelState.IsValid)
                 return BadRequest();
 
             if (!_scheduleService.IsExitingGroup(id))
                 return StatusCode(404);
 
-            return new JsonResult(_scheduleService.GetPeriodScheduleGroup(dateFrom, dateTo, id));
+            return _scheduleService.GetPeriodScheduleGroup(new DateTime(2023, 3, 13), new DateTime(2023,3,19), id);
         }
 
         [HttpGet("teacher/{id}")]
-        public ActionResult<PeriodScheduleDto> GetForTeacher(Guid id, [FromQuery] DateTime dateFrom, [FromQuery] DateTime dateTo)
+        public ActionResult<PeriodScheduleDto> GetForTeacher(Guid id)
         {
             if (!ModelState.IsValid)
                 return BadRequest();
@@ -36,7 +37,7 @@ namespace Schedule.Controllers
             if (!_scheduleService.IsExitingTeacher(id))
                 return StatusCode(404);
 
-            return new JsonResult(_scheduleService.GetPeriodScheduleTeacher(dateFrom, dateTo, id));
+            return _scheduleService.GetPeriodScheduleTeacher(new DateTime(2023, 3, 13), new DateTime(2023, 3, 19), id);
         }
     }
 }
