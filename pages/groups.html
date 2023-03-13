@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Группы</title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+		integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+</head>
+
+<body class="bg-light">
+	<header>
+		<div class="container my-3">
+			<div class="btn-group" role="group" aria-label="Navigation">
+				<a class="btn btn-secondary" href="groups.html" role="button" disabled>Группы</a>
+				<a class="btn btn-secondary" href="teachers.html" role="button">Преподаватели</a>
+				<a class="btn btn-secondary" href="studyrooms.html" role="button">Аудитории</a>
+			</div>
+		</div>
+	</header>
+	<main>
+		<div class="container">
+			<div class="row">
+				<div class="col p-4 bg-white rounded">
+					<form>
+						<div class="form-group">
+							<label for="FacultySelect">Факультет</label>
+							<select class="form-control" id="FacultySelect" data-live-search="true">
+								<option selected>Название факультета</option>
+								<option>2</option>
+								<option>3</option>
+								<option>4</option>
+								<option>5</option>
+							</select>
+						</div>
+						<div class="form-group">
+							<label for="GroupSelect">Группа</label>
+							<select class="form-control" id="GroupSelect" data-live-search="true" disabled>
+								<option selected>Номер группы</option>
+								<option>2</option>
+								<option>3</option>
+								<option>4</option>
+								<option>5</option>
+							</select>
+						</div>
+						<button type="button" class="btn btn-primary">Показать расписание ›</button>
+					</form>
+				</div>
+				<div class="col-sm-1 d-flex justify-content-center align-items-center">
+					<p>или</p>
+				</div>
+				<div class="col p-4 bg-white roundedl">
+					<form>
+						<div class="form-group">
+							<label for="FacultySelect">Факультет</label>
+							<select class="form-control" id="FacultySelect" data-live-search="true">
+								<option selected>Название факультета</option>
+								<option>2</option>
+								<option>3</option>
+								<option>4</option>
+								<option>5</option>
+							</select>
+						</div>
+						<div class="form-group">
+							<label for="GroupInput">Группа</label>
+							<input type="text" class="form-control" id="GroupInput" placeholder="Номер группы">
+						</div>
+						<button type="button" class="btn btn-primary">Добавить группу ›</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</main>
+	<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+		integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+		crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
+		crossorigin="anonymous"></script>
+</body>
+
+</html>
