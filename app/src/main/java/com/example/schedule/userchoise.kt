@@ -1,9 +1,11 @@
 package com.example.schedule
 
+import android.content.Context
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import androidx.appcompat.app.AppCompatActivity
+
 
 class userchoise : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -11,9 +13,8 @@ class userchoise : AppCompatActivity() {
         setContentView(R.layout.activity_userchoise)
     }
     public fun studentact(view: View){
-        val studentInt = Intent(this,stud::class.java)
+        val studentInt = Intent(this, StudentActivity::class.java)
         startActivity(studentInt)
-
     }
     public fun teacheract(view: View){
         val prepodint = Intent(this,PrepodActivity::class.java)

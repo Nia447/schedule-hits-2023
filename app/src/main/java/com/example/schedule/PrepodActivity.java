@@ -35,6 +35,8 @@ public class PrepodActivity extends AppCompatActivity {
                     String fio = mFioEditText.getText().toString();
                     SharedPreferences.Editor editor = mSharedPreferences.edit();
                     editor.putString("FIO", fio);
+                    editor.putBoolean("IsStudent", false);
+                    editor.putString("Id", ""); // TODO: From Select Get Id
                     editor.apply();
                     Toast.makeText(PrepodActivity.this, "Saved FIO: " + fio, Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(PrepodActivity.this, MainActivity.class);

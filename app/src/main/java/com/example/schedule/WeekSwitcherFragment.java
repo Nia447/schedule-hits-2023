@@ -28,14 +28,14 @@ public class WeekSwitcherFragment extends Fragment {
         btnPrevWeek.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                listener.onWeekSwitched(-1); // переключение на предыдущую неделю
+                listener.onWeekSwitched(-1);
             }
         });
 
         btnNextWeek.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                listener.onWeekSwitched(1); // переключение на следующую неделю
+                listener.onWeekSwitched(1);
             }
         });
 
