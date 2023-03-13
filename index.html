@@ -1,369 +1,391 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Document</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+    integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
 
 </head>
-<body>
-    <table class="table table-bordered .table-responsive">
-        <thead>
-          <tr>
-            <th scope="col"></th>
-            <th scope="col">Placeholder </th>
-            <th scope="col">Placeholder </th>
-            <th scope="col">Placeholder </th>
-            <th scope="col">Placeholder </th>
-            <th scope="col">Placeholder </th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">8:45 <br> 10:20
-            </th>
-            <td>Placeholder </td>
-            <td>Placeholder </td>
-            <td>Placeholder </td>
-            <td>Placeholder </td>
-            <td>Placeholder </td>
-          </tr>
-          <tr>
-            <th scope="row">10:35 <br> 12:10</th>
-            <td>Placeholder </td>
-            <td>Placeholder </td>
-            <td>Placeholder </td>
-            <td>Placeholder </td>
-            <td>Placeholder </td>
-          </tr>
-          <tr>
-            <th scope="row">12:25 <br> 14:00</th>
-            <td>Placeholder </td>
-            <td>Placeholder </td>
-            <td>Placeholder </td>
-            <td>Placeholder </td>
-            <td>Placeholder </td>
-          </tr>
-          <tr>
-            <th scope="row">14:45 <br> 16:20</th>
-            <td>Placeholder </td>
-            <td>Placeholder </td>
-            <td>Placeholder </td>
-            <td>Placeholder </td>
-            <td>Placeholder </td>
-          </tr>
-          <tr>
-            <th scope="row">16:35 <br> 18:10</th>
-            <td>Placeholder </td>
-            <td>Placeholder </td>
-            <td>Placeholder </td>
-            <td>Placeholder </td>
-            <td>Placeholder </td>
-          </tr>
-          <tr>
-            <th scope="row">18:25 <br> 20:00</th>
-            <td>Placeholder </td>
-            <td>Placeholder </td>
-            <td>Placeholder </td>
-            <td>Placeholder </td>
-            <td>Placeholder </td>
-          </tr>
-          <tr>
-            <th scope="row">20:15 <br> 21:50</th>
-            <td>Placeholder </td>
-            <td>Placeholder </td>
-            <td>Placeholder </td>
-            <td>Placeholder </td>
-            <td>Placeholder </td>
-          </tr>
-        </tbody>
-      </table>
 
-      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#EditModal">Редактировать</button>
-      
-      <div class="modal fade" id="EditModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Занятие</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              <div class="container-fluid">
-                <form>
-                  <div class="row">
-                    <div class="col">
-                      <div class="form-group">
-                        <label for="SubjectSelect">Предмет</label>
-                        <select class="form-control" id="SubjectSelect">
-                          <option selected>Название предмет</option>
-                          <option>2</option>
-                          <option>3</option>
-                          <option>4</option>
-                          <option>5</option>
-                        </select>
-                      </div>
-                    </div>
-                    <div class="col">
-                      <div class="form-group">
-                        <label for="TeacherSelect">Преподаватель</label>
-                        <select class="form-control" id="TeacherSelect">
-                          <option selected>ФИО преподавателя</option>
-                          <option>2</option>
-                          <option>3</option>
-                          <option>4</option>
-                          <option>5</option>
-                        </select>
-                      </div>
-                    </div>
+<body onload="getData()">
+  <header>
+    <div class="container my-3">
+      <div class="btn-group" role="group" aria-label="Navigation">
+        <a class="btn btn-secondary" href="pages/groups.html" role="button">Группы</a>
+        <a class="btn btn-secondary" href="pages/teachers.html" role="button">Преподаватели</a>
+        <a class="btn btn-secondary" href="pages/studyrooms.html" role="button">Аудитории</a>
+      </div>
+    </div>
+  </header>
+  <table class="table table-bordered .table-responsive">
+    <thead>
+      <tr>
+        <th scope="col"></th>
+        <th scope="col">Placeholder </th>
+        <th scope="col">Placeholder </th>
+        <th scope="col">Placeholder </th>
+        <th scope="col">Placeholder </th>
+        <th scope="col">Placeholder </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">8:45 <br> 10:20
+        </th>
+        <td>Placeholder </td>
+        <td>Placeholder </td>
+        <td>Placeholder </td>
+        <td>Placeholder </td>
+        <td>Placeholder </td>
+      </tr>
+      <tr>
+        <th scope="row">10:35 <br> 12:10</th>
+        <td>Placeholder </td>
+        <td>Placeholder </td>
+        <td>Placeholder </td>
+        <td>Placeholder </td>
+        <td>Placeholder </td>
+      </tr>
+      <tr>
+        <th scope="row">12:25 <br> 14:00</th>
+        <td>Placeholder </td>
+        <td>Placeholder </td>
+        <td>Placeholder </td>
+        <td>Placeholder </td>
+        <td>Placeholder </td>
+      </tr>
+      <tr>
+        <th scope="row">14:45 <br> 16:20</th>
+        <td>Placeholder </td>
+        <td>Placeholder </td>
+        <td>Placeholder </td>
+        <td>Placeholder </td>
+        <td>Placeholder </td>
+      </tr>
+      <tr>
+        <th scope="row">16:35 <br> 18:10</th>
+        <td>Placeholder </td>
+        <td>Placeholder </td>
+        <td>Placeholder </td>
+        <td>Placeholder </td>
+        <td>Placeholder </td>
+      </tr>
+      <tr>
+        <th scope="row">18:25 <br> 20:00</th>
+        <td>Placeholder </td>
+        <td>Placeholder </td>
+        <td>Placeholder </td>
+        <td>Placeholder </td>
+        <td>Placeholder </td>
+      </tr>
+      <tr>
+        <th scope="row">20:15 <br> 21:50</th>
+        <td>Placeholder </td>
+        <td>Placeholder </td>
+        <td>Placeholder </td>
+        <td>Placeholder </td>
+        <td>Placeholder </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#EditModal">Редактировать</button>
+
+  <div class="modal fade" id="EditModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Занятие</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="container-fluid">
+            <form>
+              <div class="row">
+                <div class="col">
+                  <div class="form-group">
+                    <label for="subjectSelect1">Предмет</label>
+                    <select class="form-control" id="subjectSelect1">
+                      <option selected>Название предмет</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                      <option>5</option>
+                    </select>
                   </div>
-                  <div class="row">
-                    <div class="col">
-                      <div class="form-group">
-                        <label for="DaySelect">День недели</label>
-                        <select class="form-control" id="DaySelect">
-                          <option selected>ПН</option>
-                          <option>ВТ</option>
-                          <option>СР</option>
-                          <option>ЧТ</option>
-                          <option>ПТ</option>
-                          <option>СБ</option>
-                        </select>
-                      </div>
-                    </div>
-                    <div class="col">
-                      <div class="form-group">
-                        <label for="TimeSelect">Преподаватель</label>
-                        <select class="form-control" id="TimeSelect">
-                          <option selected>8:45 – 10:20 · 1-я пара</option>
-                          <option>10:35 – 12:10 · 2-я пара</option>
-                          <option>12:25 – 14:00 · 3-я пара</option>
-                          <option>14:45 – 16:20 · 4-я пара</option>
-                          <option>16:35 – 18:10 · 5-я пара</option>
-                          <option>18:25 – 20:00 · 6-я пара</option>
-                          <option>20:15 – 21:50 · 5-я пара</option>
-                        </select>
-                      </div>
-                    </div>
+                </div>
+                <div class="col">
+                  <div class="form-group">
+                    <label for="teacherSelect1">Преподаватель</label>
+                    <select class="form-control" id="teacherSelect1">
+                      <option selected>ФИО преподавателя</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                      <option>5</option>
+                    </select>
                   </div>
-                  <div class="row">
-                    <div class="col">
-                      <div class="form-group">
-                        <label for="BuildingSelect">Корпус</label>
-                        <select class="form-control" id="BuildingSelect">
-                          <option selected>Номер корпуса</option>
-                          <option>2</option>
-                          <option>3</option>
-                          <option>4</option>
-                          <option>5</option>
-                        </select>
-                      </div>
-                    </div>
-                    <div class="col">
-                      <div class="form-group">
-                        <label for="StudyRoomSelect">Аудитория</label>
-                        <select class="form-control" id="StudyRoomSelect" disabled>
-                          <option selected>Номер аудитории</option>
-                          <option>2</option>
-                          <option>3</option>
-                          <option>4</option>
-                          <option>5</option>
-                        </select>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col">
-                      <div class="form-group">
-                        <label for="TypeSelect">Вид занятия</label>
-                        <select class="form-control" id="TypeSelect">
-                          <option selected>Лекция</option>
-                          <option>Семинар</option>
-                          <option>Практическое занятие</option>
-                          <option>Лабораторная</option>
-                          <option>Индивидуальное занятие</option>
-                          <option>Контрольная работа</option>
-                          <option>Экзамен</option>
-                          <option>Зачёт</option>
-                          <option>Дифф. зачёт</option>
-                          <option>Консультация</option>
-                          <option>Бронь</option>
-                        </select>
-                      </div>
-                    </div>
-                    <div class="col">
-                      <div class="form-check">
-                        <input class="form-check-input" type="radio" name="WeeklyOnesRadios" id="WeeklyRadio" value="option1" checked>
-                        <label class="form-check-label" for="WeeklyRadio">
-                          Еженедельно
-                        </label>
-                      </div>
-                      <div class="form-check">
-                        <input class="form-check-input" type="radio" name="WeeklyOnesRadios" id="OnceRadio" value="option2">
-                        <label class="form-check-label" for="OnceRadio">
-                          Единоразово
-                        </label>
-                      </div>
-                    </div>
-                  </div>
-                  
-                </form>
+                </div>
               </div>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Закрыть</button>
-              <button type="button" class="btn btn-primary">Сохранить</button>
-            </div>
+              <div class="row">
+                <div class="col">
+                  <div class="form-group">
+                    <label for="daySelect1">День недели</label>
+                    <select class="form-control" id="daySelect1">
+                      <option selected>ПН</option>
+                      <option>ВТ</option>
+                      <option>СР</option>
+                      <option>ЧТ</option>
+                      <option>ПТ</option>
+                      <option>СБ</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="form-group">
+                    <label for="timeSelect1">Преподаватель</label>
+                    <select class="form-control" id="timeSelect1">
+                      <option selected>8:45 – 10:20 · 1-я пара</option>
+                      <option>10:35 – 12:10 · 2-я пара</option>
+                      <option>12:25 – 14:00 · 3-я пара</option>
+                      <option>14:45 – 16:20 · 4-я пара</option>
+                      <option>16:35 – 18:10 · 5-я пара</option>
+                      <option>18:25 – 20:00 · 6-я пара</option>
+                      <option>20:15 – 21:50 · 5-я пара</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <div class="form-group">
+                    <label for="buildingSelect1">Корпус</label>
+                    <select class="form-control" id="buildingSelect1">
+                      <option selected>Номер корпуса</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                      <option>5</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="form-group">
+                    <label for="studyRoomSelect1">Аудитория</label>
+                    <select class="form-control" id="studyRoomSelect1" disabled>
+                      <option selected>Номер аудитории</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                      <option>5</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <div class="form-group">
+                    <label for="typeSelect1">Вид занятия</label>
+                    <select class="form-control" id="typeSelect1">
+                      <option selected>Лекция</option>
+                      <option>Семинар</option>
+                      <option>Практическое занятие</option>
+                      <option>Лабораторная</option>
+                      <option>Индивидуальное занятие</option>
+                      <option>Контрольная работа</option>
+                      <option>Экзамен</option>
+                      <option>Зачёт</option>
+                      <option>Дифф. зачёт</option>
+                      <option>Консультация</option>
+                      <option>Бронь</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="weeklyOnceRadios1" id="weeklyRadio1"
+                      value="option1" checked>
+                    <label class="form-check-label" for="weeklyRadio1">
+                      Еженедельно
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="weeklyOnceRadios1" id="onceRadio1"
+                      value="option2">
+                    <label class="form-check-label" for="onceRadio1">
+                      Единоразово
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+            </form>
           </div>
         </div>
-      </div>
-
-      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#AddModal">Добавить</button>
-      
-      <div class="modal fade" id="AddModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Добавить занятие</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              <div class="container-fluid">
-                <form>
-                  <div class="row">
-                    <div class="col">
-                      <div class="form-group">
-                        <label for="SubjectSelect">Предмет</label>
-                        <select class="form-control" id="SubjectSelect">
-                          <option selected>Название предмет</option>
-                          <option>2</option>
-                          <option>3</option>
-                          <option>4</option>
-                          <option>5</option>
-                        </select>
-                      </div>
-                    </div>
-                    <div class="col">
-                      <div class="form-group">
-                        <label for="TeacherSelect">Преподаватель</label>
-                        <select class="form-control" id="TeacherSelect">
-                          <option selected>ФИО преподавателя</option>
-                          <option>2</option>
-                          <option>3</option>
-                          <option>4</option>
-                          <option>5</option>
-                        </select>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col">
-                      <div class="form-group">
-                        <label for="DaySelect">День недели</label>
-                        <select class="form-control" id="DaySelect">
-                          <option selected>ПН</option>
-                          <option>ВТ</option>
-                          <option>СР</option>
-                          <option>ЧТ</option>
-                          <option>ПТ</option>
-                          <option>СБ</option>
-                        </select>
-                      </div>
-                    </div>
-                    <div class="col">
-                      <div class="form-group">
-                        <label for="TimeSelect">Преподаватель</label>
-                        <select class="form-control" id="TimeSelect">
-                          <option selected>8:45 – 10:20 · 1-я пара</option>
-                          <option>10:35 – 12:10 · 2-я пара</option>
-                          <option>12:25 – 14:00 · 3-я пара</option>
-                          <option>14:45 – 16:20 · 4-я пара</option>
-                          <option>16:35 – 18:10 · 5-я пара</option>
-                          <option>18:25 – 20:00 · 6-я пара</option>
-                          <option>20:15 – 21:50 · 5-я пара</option>
-                        </select>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col">
-                      <div class="form-group">
-                        <label for="BuildingSelect">Корпус</label>
-                        <select class="form-control" id="BuildingSelect">
-                          <option selected>Номер корпуса</option>
-                          <option>2</option>
-                          <option>3</option>
-                          <option>4</option>
-                          <option>5</option>
-                        </select>
-                      </div>
-                    </div>
-                    <div class="col">
-                      <div class="form-group">
-                        <label for="StudyRoomSelect">Аудитория</label>
-                        <select class="form-control" id="StudyRoomSelect" disabled>
-                          <option selected>Номер аудитории</option>
-                          <option>2</option>
-                          <option>3</option>
-                          <option>4</option>
-                          <option>5</option>
-                        </select>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col">
-                      <div class="form-group">
-                        <label for="TypeSelect">Вид занятия</label>
-                        <select class="form-control" id="TypeSelect">
-                          <option selected>Лекция</option>
-                          <option>Семинар</option>
-                          <option>Практическое занятие</option>
-                          <option>Лабораторная</option>
-                          <option>Индивидуальное занятие</option>
-                          <option>Контрольная работа</option>
-                          <option>Экзамен</option>
-                          <option>Зачёт</option>
-                          <option>Дифф. зачёт</option>
-                          <option>Консультация</option>
-                          <option>Бронь</option>
-                        </select>
-                      </div>
-                    </div>
-                    <div class="col">
-                      <div class="form-check">
-                        <input class="form-check-input" type="radio" name="WeeklyOnesRadios" id="WeeklyRadio" value="option1" checked>
-                        <label class="form-check-label" for="WeeklyRadio">
-                          Еженедельно
-                        </label>
-                      </div>
-                      <div class="form-check">
-                        <input class="form-check-input" type="radio" name="WeeklyOnesRadios" id="OnceRadio" value="option2">
-                        <label class="form-check-label" for="OnceRadio">
-                          Единоразово
-                        </label>
-                      </div>
-                    </div>
-                  </div>
-                  
-                </form>
-              </div>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Отмена</button>
-              <button type="button" class="btn btn-primary">Подтвердить</button>
-            </div>
-          </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Закрыть</button>
+          <button type="button" class="btn btn-primary">Сохранить</button>
         </div>
       </div>
+    </div>
+  </div>
 
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#AddModal">Добавить</button>
+
+  <div class="modal fade" id="AddModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Добавить занятие</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="container-fluid">
+            <form>
+              <div class="row">
+                <div class="col">
+                  <div class="form-group">
+                    <label for="subjectSelect2">Предмет</label>
+                    <select class="form-control" id="subjectSelect2">
+                      <option selected>Название предмет</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                      <option>5</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="form-group">
+                    <label for="teacherSelect2">Преподаватель</label>
+                    <select class="form-control" id="teacherSelect2">
+                      <option selected>ФИО преподавателя</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                      <option>5</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <div class="form-group">
+                    <label for="daySelect2">День недели</label>
+                    <select class="form-control" id="daySelect2">
+                      <option selected>ПН</option>
+                      <option>ВТ</option>
+                      <option>СР</option>
+                      <option>ЧТ</option>
+                      <option>ПТ</option>
+                      <option>СБ</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="form-group">
+                    <label for="timeSelect2">Преподаватель</label>
+                    <select class="form-control" id="timeSelect2">
+                      <option selected>8:45 – 10:20 · 1-я пара</option>
+                      <option>10:35 – 12:10 · 2-я пара</option>
+                      <option>12:25 – 14:00 · 3-я пара</option>
+                      <option>14:45 – 16:20 · 4-я пара</option>
+                      <option>16:35 – 18:10 · 5-я пара</option>
+                      <option>18:25 – 20:00 · 6-я пара</option>
+                      <option>20:15 – 21:50 · 5-я пара</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <div class="form-group">
+                    <label for="buildingSelect2">Корпус</label>
+                    <select class="form-control" id="buildingSelect2">
+                      <option selected>Номер корпуса</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                      <option>5</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="form-group">
+                    <label for="studyRoomSelect2">Аудитория</label>
+                    <select class="form-control" id="studyRoomSelect2" disabled>
+                      <option selected>Номер аудитории</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                      <option>5</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <div class="form-group">
+                    <label for="typeSelect2">Вид занятия</label>
+                    <select class="form-control" id="typeSelect2">
+                      <option selected>Лекция</option>
+                      <option>Семинар</option>
+                      <option>Практическое занятие</option>
+                      <option>Лабораторная</option>
+                      <option>Индивидуальное занятие</option>
+                      <option>Контрольная работа</option>
+                      <option>Экзамен</option>
+                      <option>Зачёт</option>
+                      <option>Дифф. зачёт</option>
+                      <option>Консультация</option>
+                      <option>Бронь</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="weeklyOnceRadios2" id="weeklyRadio2"
+                      value="option1" checked>
+                    <label class="form-check-label" for="weeklyRadio2">
+                      Еженедельно
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="weeklyOnceRadios2" id="onceRadio2"
+                      value="option2">
+                    <label class="form-check-label" for="onceRadio2">
+                      Единоразово
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+            </form>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Отмена</button>
+          <button type="button" class="btn btn-primary">Подтвердить</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="index.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
+    crossorigin="anonymous"></script>
 </body>
+
 </html>
