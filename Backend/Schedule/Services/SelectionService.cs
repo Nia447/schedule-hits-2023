@@ -104,7 +104,7 @@ namespace Schedule.Services
 
             foreach (Lesson lesson in lessons)
             {
-                result.Add(_converterService.ToLessonDto(lesson));
+                result.Add(_converterService.ToLessonDto(lesson).Result);
             }
 
             return result;

@@ -3,6 +3,6 @@
     public class DailyScheduleDto
     {
         public DateOnly Date { get; set; }
-        public List<LessonDto> Lessons { get; set; }
+        public List<LessonDto> Lessons { get; set; } = new List<LessonDto>();
     }
 }

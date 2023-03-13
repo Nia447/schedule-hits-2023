@@ -6,7 +6,7 @@ namespace Schedule.Services
 {
     public interface IConverterService
     {
-        LessonDto ToLessonDto(Lesson lesson);
+        Task<LessonDto> ToLessonDto(Lesson lesson);
     }
 
     public class ConverterService: IConverterService
@@ -18,9 +18,9 @@ namespace Schedule.Services
             _context = context;
         }
 
-        public LessonDto ToLessonDto(Lesson lesson)
+        public Task<LessonDto> ToLessonDto(Lesson lesson)
         {
-            return new LessonDto
+            return Task.FromResult(new LessonDto
             {
                 Id = lesson.Id,
                 NumberLesson = (NumberLesson)lesson.NumberLesson,
@@ -32,12 +32,12 @@ namespace Schedule.Services
                 Group = ToGroupDto(lesson.GroupId),
                 Teacher = ToTeacherDto(lesson.TeacherId),
                 Audience = ToAudienceDto(lesson.AudienceId)
-            };
+            });
         }
 
         public SubjectDto ToSubjectDto(Guid? id)
         {
-            var subject = _context.Subjects.FirstOrDefault(x => x.Id == id);
+            var subject = _context.Subjects.Find(id);
 
             if (subject == null)
             {
@@ -57,7 +57,7 @@ namespace Schedule.Services
 
         public GroupDto ToGroupDto(Guid? id)
         {
-            var group = _context.Groups.FirstOrDefault(x => x.Id == id);
+            var group = _context.Groups.Find(id);
 
             if (group == null)
             {
@@ -76,7 +76,7 @@ namespace Schedule.Services
 
         public TeacherDto ToTeacherDto(Guid? id)
         {
-            var teacher = _context.Teachers.FirstOrDefault(x => x.Id == id);
+            var teacher = _context.Teachers.Find(id);
 
             if (teacher == null)
             {
@@ -91,7 +91,7 @@ namespace Schedule.Services
 
         public AudienceDto ToAudienceDto(Guid? id)
         {
-            var audience = _context.Audiences.FirstOrDefault(x => x.Id == id);
+            var audience = _context.Audiences.Find(id);
 
             if (audience == null)
             {
